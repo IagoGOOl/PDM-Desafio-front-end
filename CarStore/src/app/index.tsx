@@ -1,12 +1,15 @@
 import IconButton from '@/components/IconButton';
 import OrangeButton from '@/components/OrangeButton';
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
 
 const { width, height } = Dimensions.get('window');
 
 export default function CarScreen() {
+
+const [buttonPressed, setButtonPressed] = useState(false); // estado da cor do botão
+
+
   return (
     <View style={styles.container}>
 
@@ -42,7 +45,11 @@ export default function CarScreen() {
         />
       </View>
 
-       <OrangeButton title="Comprar Agora" onPress={() => console.log('Botão pressionado!')} />
+       <OrangeButton
+        title="Comprar Agora"
+        backgroundColor={buttonPressed ? '#e04a00' : '#FF5C00'} // alterna cor
+        onPress={() => setButtonPressed(!buttonPressed)}
+      />
 
     </View>
   );
