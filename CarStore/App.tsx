@@ -1,8 +1,7 @@
-import React from 'react';
-import LoginScreen from './src/screens/LoginScreens';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { CarDetails } from "./src/screens/carDetails";
 
-const App = () => {
-  return <LoginScreen />;
-};
-
-export default App;
+export default function App() {
+  return <CarDetails />;
+}
